@@ -1,0 +1,11 @@
+Model Information:
+* title:	HK UMP - Lowpoly
+* source:	https://sketchfab.com/3d-models/hk-ump-lowpoly-77edc85265d4486d928fcb21c5175b10
+* author:	Enzo Amanrich (https://sketchfab.com/ImaGeniusMan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "HK UMP - Lowpoly" (https://sketchfab.com/3d-models/hk-ump-lowpoly-77edc85265d4486d928fcb21c5175b10) by Enzo Amanrich (https://sketchfab.com/ImaGeniusMan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -3,7 +3,10 @@ import {Link} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import BrandLogo from '../../images/logo_new2_reduced_transparent.png';
+
+const path = process.env.PUBLIC_URL;
+const logoPath = path + '/images/logo_new2_reduced_transparent.png'
+
 
 class NavigationBar extends Component {
 
@@ -12,7 +15,7 @@ class NavigationBar extends Component {
             <Navbar bg="light" expand="md" sticky="top">
                 <Container fluid>
                     <Navbar.Brand>
-                        <img src={BrandLogo} className="nav-logo"/>
+                        <img src={logoPath} className="nav-logo"/>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
