@@ -17,8 +17,10 @@ const Controls = () => {
             args={[camera, gl.domElement]}
             ref={orbitCtrlRef}
             enablePan={false}
-            maxDistance={5.0}
-            minDistance={0.2}
+            maxDistance={23.0}
+            minDistance={15.0}
+            target={[0, 2.7, 0]}
+            enableDamping
             autoRotate
         />
     );
