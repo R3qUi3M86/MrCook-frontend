@@ -20,17 +20,17 @@ class NavigationBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Link to="/" className='nav-link active'>Product</Link>
-                            <Link to="/recipes" className='nav-link active'>Recipes</Link>
+                            <Link to="/" className='nav-link active fs-5'>Product</Link>
+                            <Link to="/recipes" className='nav-link active fs-5'>Recipes</Link>
                             
                         </Nav>
                     </Navbar.Collapse>
                     <Link to="/login" className='nav-link active px-1'>
-                        <button className="btn btn-outline-primary">Login</button>
+                        <button className="btn btn-outline-primary fs-5">Login</button>
                     </Link>
                     
                     <Link to="/signup" className='nav-link active px-1'>
-                        <button className="btn btn-secondary">Signup</button>
+                        <button className="btn btn-secondary fs-5">Signup</button>
                     </Link>
                 </Container>
             </Navbar>

@@ -4,7 +4,7 @@ import Controls from "./Controls";
 
 const ProductCanvas = () => {
     return(
-        <div style={{ height: "75vh" }}>
+        <div style={{ height: "70vh" }}>
             <Canvas camera={{fov: 33, position: [13, 10, 13]}}>
                 <Controls/>
                 <spotLight position={[-15,25,25]}/>

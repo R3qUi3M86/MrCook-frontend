@@ -1,0 +1,19 @@
+@font-face {
+    font-family: mainFont;
+    src: url(../../../../../public/fonts/AgencyFB-Bold.ttf);
+    font-weight: bold;
+  }
+
+p {
+    font-family: mainFont;
+    font-size: 3rem;
+}
+
+.phraseStart {
+    color: #651d32;
+}
+
+.phraseEnd {
+    color: #ce7432;
+}
+
