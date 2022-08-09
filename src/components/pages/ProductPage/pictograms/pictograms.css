@@ -1,12 +1,13 @@
-/* .medal {
-    width: 10vw;
+
+
+@media screen and (min-width: 768px) {
+    .pictogram-column {
+        width: 15vh
+    }
 }
 
-.oven {
-    width: 10vw;
-    padding-left: 0rem;
-} */
-
-.pictogram-column {
-    width: 15vh
+@media screen and (max-width: 767px) {
+    .pictogram-column {
+        width: 20vh
+    }
 }

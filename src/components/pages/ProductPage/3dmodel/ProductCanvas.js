@@ -3,8 +3,10 @@ import { Canvas } from "react-three-fiber";
 import Controls from "./Controls";
 
 const ProductCanvas = () => {
+    const canvasStyle={height: "100vh"}
+
     return(
-        <div style={{ height: "70vh" }}>
+        <div style={canvasStyle}>
             <Canvas camera={{fov: 33, position: [13, 10, 13]}}>
                 <Controls/>
                 <spotLight position={[-15,25,25]}/>
