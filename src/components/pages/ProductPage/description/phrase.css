@@ -5,14 +5,14 @@
   }
 
 @media screen and (min-width: 768px) {
-	p {
+	.commercialPhrase {
         font-family: mainFont;
         font-size: 3rem;
     }
 }
 
 @media screen and (max-width: 767px) {
-	p {
+	.commercialPhrase {
         font-family: mainFont;
         font-size: 1rem;
     }
@@ -20,10 +20,10 @@
 
 
 .phraseStart {
-    color: #651d32;
+    color: #ce7432;
 }
 
 .phraseEnd {
-    color: #ce7432;
+    color: #651d32;
 }
 
