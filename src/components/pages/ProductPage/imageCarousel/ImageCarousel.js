@@ -10,7 +10,7 @@ const bm06 = path + '/images/bm06.jpg'
 
 const ImageCarousel = () => {
     return(
-        <div id="carouselContainer" className="d-flex justify-content-center">
+        <div id="carouselContainer" className="d-flex justify-content-center shadow">
             <div id="mainImageCarousel" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#mainImageCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -42,7 +42,7 @@ const ImageCarousel = () => {
                     <div className="carousel-item">
                         <img src={bm04} className="d-block w-100" alt="..."/>
                         <div className="carousel-caption d-none d-md-block">
-                            <p className="carouselText">Bread and butter :)</p>
+                            <p className="carouselText">Bread and butter :-)</p>
                         </div>
                     </div>
                     <div className="carousel-item">

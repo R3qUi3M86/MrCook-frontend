@@ -1,0 +1,65 @@
+@font-face {
+    font-family: mainFont;
+    src: url(../../../../../public/fonts/AgencyFB-Bold.ttf);
+    font-weight: bold;
+}
+
+.mainSectionTitle, .commercialPhrase{
+    font-family: mainFont;
+}
+
+.mainSectionTitle{
+    color: #651d32;
+}
+ 
+.subSectionTitle{
+    color: #ce7432;
+    font-weight: bold;
+}
+
+.underline {
+    height: 0.3rem;
+    width: 5rem;
+    background-color: #ce7432;
+    margin-bottom: 0.5rem;
+}
+
+.quoteText{
+    font-style: italic;
+}
+
+.descriptionText{
+
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+@media screen and (min-width: 768px) {
+	.commercialPhrase, .mainSectionTitle {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+	.commercialPhrase {
+        font-size: 1rem;
+    }
+    
+    .mainSectionTitle {
+        font-size: 1.5rem;
+    }
+
+    .underline {
+        height: 0.1rem;
+    }
+}
+
+
+.phraseStart {
+    color: #ce7432;
+}
+
+.phraseEnd {
+    color: #651d32;
+}
+

@@ -1,4 +1,4 @@
-import './phrase.css'
+import './textStyles.css'
 
 const CommercialPhrase = () =>{
     return(

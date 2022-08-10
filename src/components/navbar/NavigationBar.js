@@ -12,7 +12,7 @@ class NavigationBar extends Component {
 
     render() {
         return (
-            <Navbar bg="light" expand="md" fixed="top">
+            <Navbar bg="light" expand="md" fixed="top" className="shadow-sm">
                 <Container fluid>
                     <Navbar.Brand>
                         <img src={logoPath} className="nav-logo"/>
