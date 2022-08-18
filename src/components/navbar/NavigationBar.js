@@ -15,7 +15,7 @@ class NavigationBar extends Component {
             <Navbar bg="light" expand="md" fixed="top" className="shadow-sm">
                 <Container fluid>
                     <Navbar.Brand>
-                        <img src={logoPath} className="nav-logo"/>
+                        <img src={logoPath} className="nav-logo" alt="MrCook Logo"/>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
