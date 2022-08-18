@@ -38,6 +38,10 @@
 	.commercialPhrase, .mainSectionTitle {
         font-size: 3rem;
     }
+
+    .mainStarRating{
+        font-size: 2rem;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -51,6 +55,10 @@
 
     .underline {
         height: 0.1rem;
+    }
+
+    .mainStarRating{
+        font-size: 1rem;
     }
 }
 

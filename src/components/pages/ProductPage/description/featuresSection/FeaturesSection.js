@@ -1,7 +1,7 @@
 const path = process.env.PUBLIC_URL;
 const plateImg = path + '/images/plate.png'
 const antiSlipImg = path + '/images/antislip_light.png'
-const foodImg = path + '/images/food_safe.png'
+const foodImg = path + '/images/food_safe2.png'
 const temperatureImg = path + '/images/temp.png'
 
 const FeaturesSection = () => {

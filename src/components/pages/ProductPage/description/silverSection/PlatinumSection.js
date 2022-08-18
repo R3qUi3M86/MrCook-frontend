@@ -5,7 +5,7 @@ const simplicityImg = path + '/images/simplicity.png'
 
 const PlatinumSection = () => {
     return(
-        <section className="section pt-2 pt-md-5 bg-light shadow-sm">
+        <section className="section pt-2 pt-md-5 bg-light shadow">
             <div className="container">
                 <div className="d-flex justify-content-center">
                     <div className="col-3 col-md-2">
