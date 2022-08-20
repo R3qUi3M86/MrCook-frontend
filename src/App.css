@@ -16,7 +16,12 @@
 }
 
 .orange {
-  color: #ce7432
+  color: #ce7432 !important;
+}
+
+hr.orange {
+  border-width: 0;
+  opacity: 1;
 }
 
 /* BOOTSTRAP OVERLOADS */

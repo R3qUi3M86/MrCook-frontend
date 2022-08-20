@@ -14,6 +14,8 @@ const CustomerReviews = (props) => {
     }
 
     if (data){
+        console.log(data)
+
         return(
             <div className="container">
                 {props.data.map((comment) => <CustomerReview key={comment.id}

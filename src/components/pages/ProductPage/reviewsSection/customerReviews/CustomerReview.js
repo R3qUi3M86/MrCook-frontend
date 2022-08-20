@@ -12,8 +12,6 @@ const CustomerReview = (props) => {
     const createTime = props.created.replace("T", " ").substr(0, 19);
     const modifiedTime = props.created.replace("T", " ").substr(0, 19);
 
-    console.log(props.modified)
-
     return(
         <div className="py-4">
             <div className="d-flex justify-content-between">
@@ -40,10 +38,3 @@ const CustomerReview = (props) => {
 }
 
 export default CustomerReview;
-
-// author={comment.userDTO.username}
-// title={comment.title} 
-// body={comment.body}
-// rating={comment.rating}
-// created={comment.createDate}
-// modified={comment.modifyDate}/>)}
