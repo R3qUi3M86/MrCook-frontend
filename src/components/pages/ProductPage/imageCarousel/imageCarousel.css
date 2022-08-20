@@ -1,12 +1,12 @@
-#carouselContainer{
+#carousel-container{
     background-color: #651d32;
 }
 
-#mainImageCarousel{
+#main-image-carousel{
     background-color: black;
 }
 
-.carouselText {
+.carousel-text {
     color: #ffffff;
     font-family: mainFont;
     font-size: 3rem;
@@ -14,13 +14,13 @@
 }
 
 @media screen and (max-width: 760px) {
-    #mainImageCarousel{
+    #main-image-carousel{
         max-width: 120vh;
     }
 }
 
 @media screen and (min-width: 760px) {
-    #mainImageCarousel{
+    #main-image-carousel{
         max-width: 138vh;
     }
 }

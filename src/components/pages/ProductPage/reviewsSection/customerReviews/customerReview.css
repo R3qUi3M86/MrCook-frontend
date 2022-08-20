@@ -1,0 +1,11 @@
+.product-review-author{
+    font-family: mainFont;
+    font-size: 1.5rem;
+    color: #651d32;
+}
+
+.edit-review-btn:hover {
+    transition: color 0.2s;
+    color: #ce7432;
+    cursor: pointer
+}

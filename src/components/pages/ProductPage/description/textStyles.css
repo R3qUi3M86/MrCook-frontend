@@ -4,15 +4,15 @@
     font-weight: bold;
 }
 
-.mainSectionTitle, .commercialPhrase{
+.main-section-title, .commercial-phrase{
     font-family: mainFont;
 }
 
-.mainSectionTitle{
+.main-section-title{
     color: #651d32;
 }
  
-.subSectionTitle{
+.sub-section-title{
     color: #ce7432;
     font-weight: bold;
 }
@@ -24,32 +24,32 @@
     margin-bottom: 0.5rem;
 }
 
-.quoteText{
+.quote-text{
     font-style: italic;
 }
 
-.descriptionText{
+.description-text{
 
     text-align: justify;
     text-justify: inter-word;
 }
 
 @media screen and (min-width: 768px) {
-	.commercialPhrase, .mainSectionTitle {
+	.commercial-phrase, .main-section-title {
         font-size: 3rem;
     }
 
-    .mainStarRating{
+    .main-star-rating{
         font-size: 2rem;
     }
 }
 
 @media screen and (max-width: 767px) {
-	.commercialPhrase {
+	.commercial-phrase {
         font-size: 1rem;
     }
     
-    .mainSectionTitle {
+    .main-section-title {
         font-size: 1.5rem;
     }
 
@@ -57,17 +57,17 @@
         height: 0.1rem;
     }
 
-    .mainStarRating{
+    .main-star-rating{
         font-size: 1rem;
     }
 }
 
 
-.phraseStart {
+.phrase-start {
     color: #ce7432;
 }
 
-.phraseEnd {
+.phrase-end {
     color: #651d32;
 }
 

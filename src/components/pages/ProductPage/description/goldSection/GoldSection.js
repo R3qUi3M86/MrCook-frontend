@@ -13,11 +13,11 @@ const GoldSection = () => {
                     </div>
                 </div>
                 <div className="row text-center">
-                    <p className="mainSectionTitle mb-0">The number one kitchenware you will ever need!</p>
+                    <p className="main-section-title mb-0">The number one kitchenware you will ever need!</p>
                     <div className="d-flex justify-content-center">
                         <div className="underline col-1 align-self-center"></div>
                     </div>
-                    <p className="quoteText">"Design simplicity conveys perfection"</p>
+                    <p className="quote-text">"Design simplicity conveys perfection"</p>
                 </div>
                 <div className="row">
                     <div className="col-md-6 px-5 pt-3 pt-md-0">
@@ -27,9 +27,9 @@ const GoldSection = () => {
                             </div>
                         </div>
                         <div className="row text-center">
-                            <p className="subSectionTitle my-1">IMAGINE</p>
+                            <p className="sub-section-title my-1">IMAGINE</p>
                         </div>
-                        <p className="descriptionText">&emsp;&emsp;Everything starts with imagination. If you could think about ideal lifestyle for yourself 
+                        <p className="description-text">&emsp;&emsp;Everything starts with imagination. If you could think about ideal lifestyle for yourself 
                         and loved ones, what would it contain? Perhaps some physical activity like team sports, gym or maybe some yoga? Maybe 
                         you would like to loose few kilograms or gain weight if you think you are too skinny? We are what we eat - that is a fact! MrCook
                         is a perfect tool for you and anyone else that will help you finding this perfect lifestyle we all strive to achieve. "How?"
@@ -43,9 +43,9 @@ const GoldSection = () => {
                             </div>
                         </div>
                         <div className="row text-center">
-                            <p className="subSectionTitle my-1">DISCOVER</p>
+                            <p className="sub-section-title my-1">DISCOVER</p>
                         </div>
-                        <p className="descriptionText">&emsp;&emsp;Journey together with our community, explore and find unlimited utilities of MrCook! From baking bread, through
+                        <p className="description-text">&emsp;&emsp;Journey together with our community, explore and find unlimited utilities of MrCook! From baking bread, through
                         salads, slow cooked meats, vegan dishes to chicken wings - this is just for start. Use MrCook to store food in fridge or freezer, eat directly from it
                         or strain some pasta without neccessity of bulky colander. Out of cooking ideas? - check out <u>Recipes</u> section and explore limitless world 
                         of delicous dishes, specifically tailored for MrCook, created by our Chefs and of course - growing user community which you can be a part of 

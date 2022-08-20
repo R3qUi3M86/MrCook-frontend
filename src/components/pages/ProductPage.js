@@ -7,7 +7,7 @@ import GoldSection from './productPage/description/goldSection/GoldSection';
 import PlatinumSection from './productPage/description/silverSection/PlatinumSection';
 import CompatibilitySection from './productPage/description/compatibilitySection/CompatibilitySection';
 import FeaturesSection from './productPage/description/featuresSection/FeaturesSection';
-import UserReviews from './productPage/userReviews/UserReviews';
+import ReviewsSection from './productPage/reviewsSection/ReviewsSection';
 
 class ProductPage extends Component {
 
@@ -25,7 +25,7 @@ class ProductPage extends Component {
                 <PlatinumSection/>
                 <CompatibilitySection/>
                 <FeaturesSection/>
-                <UserReviews/>
+                <ReviewsSection/>
             </div>
         );
     }
