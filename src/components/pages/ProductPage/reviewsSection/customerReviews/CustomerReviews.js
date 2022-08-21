@@ -5,7 +5,7 @@ import AddReview from "./AddReview";
 import CustomerReview from "./CustomerReview";
 
 const CustomerReviews = (props) => {
-    const {data, status, loading, error} = useFetch("http://localhost:5000/user/get_current", "GET");
+    const {data, status, loading, error} = useFetch("http://localhost:5000/user/get_current");
 
     if (error) console.log(error);
 

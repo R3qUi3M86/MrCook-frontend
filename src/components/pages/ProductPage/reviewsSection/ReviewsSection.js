@@ -6,7 +6,7 @@ import CustomerReviews from "./customerReviews/CustomerReviews";
 import DefaultSpinner from "../../../../utility/DefaultSpinner";
 
 const ReviewsSection = () => {
-    const {data, status, loading, error, refetch} = useFetch("http://localhost:5000/product_comment/get_all", "GET");
+    const {data, status, loading, error, refetch} = useFetch("http://localhost:5000/product_comment/get_all");
     const [seed, setSeed] = useState(1);
     const reload = () => {
         refetch();

@@ -24,7 +24,7 @@ const CustomerReview = (props) => {
         console.log(commentData)
         axios
             .put(url, commentData)
-            .then((response) => {
+            .then(() => {
                 props.reloadCallback();
             })
             .catch((err) => {

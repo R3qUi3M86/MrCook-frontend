@@ -16,7 +16,7 @@ const AddReview = ({data, reloadCallback}) => {
         console.log(commentData)
         axios
             .post(url, commentData)
-            .then((response) => {
+            .then(() => {
                 reloadCallback();
             })
             .catch((err) => {
