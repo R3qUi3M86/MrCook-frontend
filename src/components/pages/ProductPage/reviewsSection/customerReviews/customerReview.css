@@ -10,6 +10,12 @@
     cursor: pointer
 }
 
+.delete-review-btn:hover {
+    transition: color 0.2s;
+    color: #c9174a;
+    cursor: pointer
+}
+
 textarea{
     resize:none !important;
 }

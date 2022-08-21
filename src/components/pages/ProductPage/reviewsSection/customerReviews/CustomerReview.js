@@ -1,12 +1,13 @@
 import './customerReview.css';
-import { BsPencilSquare } from "react-icons/bs";
+import { BsPencilSquare, BsTrashFill } from "react-icons/bs";
 import { Fragment, useState } from 'react';
 import CurrentRating from './CurrentRating';
 import SetRating from './SetRating';
 import axios from 'axios';
 
 const CustomerReview = (props) => {
-    const url = "http://localhost:5000/product_comment/update"
+    const urlUpdate = "http://localhost:5000/product_comment/update";
+    const urlDelete = `http://localhost:5000/product_comment/delete/${props.id}`
     const [edit, setEdit] = useState(false);
     const [saveDisabled, setSaveDisabled] = useState(false);
     const [commentData, setCommentData] = useState({
@@ -20,10 +21,20 @@ const CustomerReview = (props) => {
         setEdit(true);
     }
 
-    function updateReview(){
-        console.log(commentData)
+    function deleteReview(){
         axios
-            .put(url, commentData)
+            .delete(urlDelete)
+            .then(() => {
+                props.reloadCallback();
+            })
+            .catch((err) => {
+                console.log(err)
+            });
+    }
+
+    function updateReview(){
+        axios
+            .put(urlUpdate, commentData)
             .then(() => {
                 props.reloadCallback();
             })
@@ -39,21 +50,21 @@ const CustomerReview = (props) => {
     function updateReviewBody(e){
         commentData.body = e.target.value;
         setCommentData(commentData);
-        if ((commentData.body.length === 0 && !saveDisabled) || (commentData.body.length > 500 && !saveDisabled)){
-            setSaveDisabled(true)
-        }
-        if (commentData.body.length !== 0 && commentData.body.length <= 500 && saveDisabled){
-            setSaveDisabled(false)
-        }
+        setSaveButton();
     }
 
     function updateReviewTitle(e){
         commentData.title = e.target.value;
         setCommentData(commentData);
-        if ((commentData.title.length === 0 && !saveDisabled) || (commentData.title.length > 255 && !saveDisabled)){
+        setSaveButton();
+    }
+
+    function setSaveButton(){
+        if ((commentData.title.length === 0 || commentData.title.length > 255 ||
+            commentData.body.length === 0 || commentData.body.length > 500) && !saveDisabled){
             setSaveDisabled(true)
-        }
-        if (commentData.title.length !== 0 && commentData.title.length <= 255 && saveDisabled){
+        } else if (commentData.title.length !== 0 && commentData.title.length <= 255 &&
+            commentData.body.length !== 0 && commentData.body.length <= 500 && saveDisabled){
             setSaveDisabled(false)
         }
     }
@@ -65,7 +76,12 @@ const CustomerReview = (props) => {
         <div className="py-4">
             <div className="d-flex justify-content-between">
                 <p className="product-review-author fw-bold my-0">{props.author} :</p>
-                {props.currentUser === props.author && !edit ? <BsPencilSquare className="edit-review-btn mt-2" onClick={() => editReview()}/> : <Fragment/>}
+                {props.currentUser === props.author && !edit ? 
+                <div>
+                    <BsTrashFill className="delete-review-btn mt-2 me-2" onClick={() => deleteReview()}/>
+                    <BsPencilSquare className="edit-review-btn mt-2" onClick={() => editReview()}/>
+                </div> :
+                <Fragment/>}
             </div>
             <div className="d-flex justify-content-between">
                 {edit ? <input className="form-control form-control-sm me-5" type="text" defaultValue={props.title} onChange={(e) => updateReviewTitle(e)} aria-label=".form-control-sm example"/> : <p className="fw-bold my-0">{props.title}</p>}

@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const AddReview = ({data, reloadCallback}) => {
     const url = "http://localhost:5000/product_comment/add"
-    const [saveDisabled, setSaveDisabled] = useState(false);
+    const [saveDisabled, setSaveDisabled] = useState(true);
     const [commentData, setCommentData] = useState({
         title: "",
         body: "",
@@ -31,24 +31,25 @@ const AddReview = ({data, reloadCallback}) => {
     function updateReviewBody(e){
         commentData.body = e.target.value;
         setCommentData(commentData);
-        if ((commentData.body.length === 0 && !saveDisabled) || (commentData.body.length > 500 && !saveDisabled)){
-            setSaveDisabled(true)
-        }
-        if (commentData.body.length !== 0 && commentData.body.length <= 500 && saveDisabled){
-            setSaveDisabled(false)
-        }
+        setSaveButton();
     }
 
     function updateReviewTitle(e){
         commentData.title = e.target.value;
         setCommentData(commentData);
-        if ((commentData.title.length === 0 && !saveDisabled) || (commentData.title.length > 255 && !saveDisabled)){
+        setSaveButton();
+    }
+
+    function setSaveButton(){
+        if ((commentData.title.length === 0 || commentData.title.length > 255 ||
+            commentData.body.length === 0 || commentData.body.length > 500) && !saveDisabled){
             setSaveDisabled(true)
-        }
-        if (commentData.title.length !== 0 && commentData.title.length <= 255 && saveDisabled){
+        } else if (commentData.title.length !== 0 && commentData.title.length <= 255 &&
+            commentData.body.length !== 0 && commentData.body.length <= 500 && saveDisabled){
             setSaveDisabled(false)
         }
     }
+
     if (!data.username || !data.member){
         return(
             <div className="text-center py-3">
