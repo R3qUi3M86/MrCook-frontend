@@ -1,9 +1,10 @@
+import { Fragment } from "react";
 import DefaultSpinner from "../../../../../utility/DefaultSpinner";
 import useFetch from "../../../../../utility/useFetch";
 import CustomerReview from "./CustomerReview";
 
 const CustomerReviews = (props) => {
-    const {data, loading, error} = useFetch("http://localhost:5000/user/get_current");
+    const {data, status, loading, error} = useFetch("http://localhost:5000/user/get_current", "GET");
 
     if (error) console.log(error);
 
@@ -13,19 +14,28 @@ const CustomerReviews = (props) => {
         )
     }
 
-    if (data){
-        console.log(data)
+    if (status===200 && data){
 
         return(
             <div className="container">
-                {props.data.map((comment) => <CustomerReview key={comment.id}
+                {props.data.map((comment) => data.username === comment.userDTO.username ? <CustomerReview key={comment.id}
+                id={comment.id}
                 currentUser={data.username}
                 author={comment.userDTO.username}
                 title={comment.title} 
                 body={comment.body}
                 rating={comment.rating}
                 created={comment.createDate}
-                modified={comment.modifyDate}/>)}
+                modified={comment.modifyDate}/> : <Fragment key={comment.id}/>)}
+
+                {props.data.map((comment) => data.username !== comment.userDTO.username ? <CustomerReview key={comment.id}
+                currentUser={data.username}
+                author={comment.userDTO.username}
+                title={comment.title} 
+                body={comment.body}
+                rating={comment.rating}
+                created={comment.createDate}
+                modified={comment.modifyDate}/> : <Fragment key={comment.id}/>)}
             </div>
         )
     }

@@ -9,3 +9,7 @@
     color: #ce7432;
     cursor: pointer
 }
+
+textarea{
+    resize:none !important;
+}

@@ -1,20 +1,18 @@
 import useFetch from "../../../../utility/useFetch"
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { IconContext } from "react-icons";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 import CustomerReviews from "./customerReviews/CustomerReviews";
 import DefaultSpinner from "../../../../utility/DefaultSpinner";
 
 const ReviewsSection = () => {
-    const {data, loading, error} = useFetch("http://localhost:5000/product_comment/get_all");
-    const [rating, setRating] = useState({
+    const {data, status, loading, error} = useFetch("http://localhost:5000/product_comment/get_all", "GET");
+    let rating = {
         avgRating: undefined,
         fullStars: undefined,
         halfStar: undefined,
         emptyStars: undefined
-    });
-    
-    // console.log(data); //Remove this
+    };
 
     function calculateRating(){
         const ratingArr = data.map((element) => element["rating"]);
@@ -24,12 +22,12 @@ const ReviewsSection = () => {
         if (!isHalfStar && (avg - fullStarsCount) >= 0.7) fullStarsCount++
         const emptyStarsCount = isHalfStar ? 4 - fullStarsCount : 5 - fullStarsCount;
 
-        setRating({
+        rating = {
             avgRating: avg,
             fullStars: fullStarsCount,
             halfStar: isHalfStar,
             emptyStars: emptyStarsCount
-        });
+        };
     }
 
     if (error) console.log(error);
@@ -40,10 +38,10 @@ const ReviewsSection = () => {
         )
     }
 
-    if (data) {
-        if (!rating.avgRating) {
-            calculateRating();
-        }
+    if (status===200 && data) {
+        calculateRating();
+
+        console.log(data);
 
         return(
             <section className="section pt-2 pt-md-5">
