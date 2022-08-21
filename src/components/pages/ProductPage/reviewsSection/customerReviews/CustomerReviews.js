@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import DefaultSpinner from "../../../../../utility/DefaultSpinner";
 import useFetch from "../../../../../utility/useFetch";
+import AddReview from "./AddReview";
 import CustomerReview from "./CustomerReview";
 
 const CustomerReviews = (props) => {
@@ -15,9 +16,11 @@ const CustomerReviews = (props) => {
     }
 
     if (status===200 && data){
-
+        
         return(
             <div className="container">
+                <AddReview data={data} reloadCallback={props.reloadCallback}/>
+
                 {props.data.map((comment) => data.username === comment.userDTO.username ? <CustomerReview key={comment.id}
                 id={comment.id}
                 currentUser={data.username}
@@ -26,7 +29,8 @@ const CustomerReviews = (props) => {
                 body={comment.body}
                 rating={comment.rating}
                 created={comment.createDate}
-                modified={comment.modifyDate}/> : <Fragment key={comment.id}/>)}
+                modified={comment.modifyDate}
+                reloadCallback={props.reloadCallback}/> : <Fragment key={comment.id}/>)}
 
                 {props.data.map((comment) => data.username !== comment.userDTO.username ? <CustomerReview key={comment.id}
                 currentUser={data.username}

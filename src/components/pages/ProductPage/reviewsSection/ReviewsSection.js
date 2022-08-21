@@ -1,12 +1,20 @@
 import useFetch from "../../../../utility/useFetch"
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { IconContext } from "react-icons";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 import CustomerReviews from "./customerReviews/CustomerReviews";
 import DefaultSpinner from "../../../../utility/DefaultSpinner";
 
 const ReviewsSection = () => {
-    const {data, status, loading, error} = useFetch("http://localhost:5000/product_comment/get_all", "GET");
+    const {data, status, loading, error, refetch} = useFetch("http://localhost:5000/product_comment/get_all", "GET");
+    const [seed, setSeed] = useState(1);
+    const reload = () => {
+        refetch();
+        let newSeed = Math.random();
+        while (seed === newSeed) newSeed = Math.random();
+        setSeed(newSeed);
+    }
+
     let rating = {
         avgRating: undefined,
         fullStars: undefined,
@@ -41,8 +49,6 @@ const ReviewsSection = () => {
     if (status===200 && data) {
         calculateRating();
 
-        console.log(data);
-
         return(
             <section className="section pt-2 pt-md-5">
                 <div className="container">
@@ -68,7 +74,7 @@ const ReviewsSection = () => {
                         <p className="quote-text">"Share your thoughts with us!"</p>
                     </div>
                 </div>
-                <CustomerReviews data={data}/>
+                <CustomerReviews data={data} reloadCallback={reload}/>
             </section>
         )
     }
