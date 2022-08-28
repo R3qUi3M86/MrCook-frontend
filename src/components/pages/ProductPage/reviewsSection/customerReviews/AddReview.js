@@ -60,7 +60,7 @@ const AddReview = ({data, reloadCallback}) => {
 
 
     if (data.username && data.member && !data.productComment){
-        console.log(data)
+
         return(
             <div className="py-4">
                 <div className="d-flex">

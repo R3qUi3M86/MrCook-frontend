@@ -5,9 +5,10 @@ import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 import CustomerReviews from "./customerReviews/CustomerReviews";
 import DefaultSpinner from "../../../../utility/DefaultSpinner";
 
-const ReviewsSection = () => {
+const ReviewsSection = ({userDetails}) => {
     const {data, status, loading, error, refetch} = useFetch("http://localhost:5000/product_comment/get_all");
     const [seed, setSeed] = useState(1);
+
     const reload = () => {
         refetch();
         let newSeed = Math.random();
@@ -74,7 +75,7 @@ const ReviewsSection = () => {
                         <p className="quote-text">"Share your thoughts with us!"</p>
                     </div>
                 </div>
-                <CustomerReviews data={data} reloadCallback={reload}/>
+                <CustomerReviews data={data} reloadCallback={reload} userDetails={userDetails}/>
             </section>
         )
     }
