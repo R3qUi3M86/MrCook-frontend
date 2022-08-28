@@ -5,7 +5,7 @@ import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 import CustomerReviews from "./customerReviews/CustomerReviews";
 import DefaultSpinner from "../../../../utility/DefaultSpinner";
 
-const ReviewsSection = ({userDetails}) => {
+const ReviewsSection = ({userDetails, setUserDetails}) => {
     const {data, status, loading, error, refetch} = useFetch("http://localhost:5000/product_comment/get_all");
     const [seed, setSeed] = useState(1);
 
@@ -17,11 +17,11 @@ const ReviewsSection = ({userDetails}) => {
     }
 
     let rating = {
-        avgRating: undefined,
-        fullStars: undefined,
-        halfStar: undefined,
-        emptyStars: undefined
-    };
+        avgRating: 5,
+        fullStars: 5,
+        halfStar: false,
+        emptyStars: 0
+    }
 
     function calculateRating(){
         const ratingArr = data.map((element) => element["rating"]);
@@ -48,7 +48,7 @@ const ReviewsSection = ({userDetails}) => {
     }
 
     if (status===200 && data) {
-        calculateRating();
+        if (data.length > 0) calculateRating();
 
         return(
             <section className="section pt-2 pt-md-5">
@@ -75,7 +75,7 @@ const ReviewsSection = ({userDetails}) => {
                         <p className="quote-text">"Share your thoughts with us!"</p>
                     </div>
                 </div>
-                <CustomerReviews data={data} reloadCallback={reload} userDetails={userDetails}/>
+                <CustomerReviews data={data} reloadCallback={reload} userDetails={userDetails} setUserDetails={setUserDetails}/>
             </section>
         )
     }

@@ -9,8 +9,8 @@ const LoginPage = ({setJwt, setUserDetails}) => {
 
     const login = () => {
         const reqBody = {
-            username: "marian",
-            password: "pass3"
+            username: "mr-cook",
+            password: "pass"
         }
 
         axios

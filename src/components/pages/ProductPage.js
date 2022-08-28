@@ -9,7 +9,7 @@ import CompatibilitySection from './productPage/description/compatibilitySection
 import FeaturesSection from './productPage/description/featuresSection/FeaturesSection';
 import ReviewsSection from './productPage/reviewsSection/ReviewsSection';
 
-const ProductPage = ({userDetails}) => {
+const ProductPage = ({userDetails, setUserDetails}) => {
     return (
         <div>
             <div className="position-relative">
@@ -23,7 +23,7 @@ const ProductPage = ({userDetails}) => {
             <PlatinumSection/>
             <CompatibilitySection/>
             <FeaturesSection/>
-            <ReviewsSection userDetails={userDetails}/>
+            <ReviewsSection userDetails={userDetails} setUserDetails={setUserDetails}/>
         </div>
     );
 }

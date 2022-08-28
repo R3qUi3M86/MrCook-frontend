@@ -2,9 +2,11 @@ import './customerReview.css';
 import { useState } from 'react';
 import SetRating from './SetRating';
 import axios from 'axios';
+import useLocalStorage from '../../../../../utility/useLocalStorage';
 
-const AddReview = ({data, reloadCallback}) => {
+const AddReview = ({data, reloadCallback, setUserDetails}) => {
     const url = "http://localhost:5000/product_comment/add"
+    const [jwt] = useLocalStorage("", "jwt");
     const [saveDisabled, setSaveDisabled] = useState(true);
     const [commentData, setCommentData] = useState({
         title: "",
@@ -15,8 +17,9 @@ const AddReview = ({data, reloadCallback}) => {
     function addNewReview(){
         console.log(commentData)
         axios
-            .post(url, commentData)
-            .then(() => {
+            .post(url, commentData, {headers:{'Authorization': `Bearer ${jwt}`}})
+            .then((response) => {
+                setUserDetails(response.data);
                 reloadCallback();
             })
             .catch((err) => {

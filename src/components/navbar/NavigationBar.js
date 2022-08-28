@@ -35,7 +35,7 @@ const NavigationBar = ({userDetails, setJwt, setUserDetails}) => {
                         
                     </Nav>
                 </Navbar.Collapse>
-                {!userDetails.username ? (
+                {!userDetails.id ? (
                 <Fragment>
                     <Link to="/login" className='nav-link active px-1'>
                         <button className="btn btn-outline-primary fs-5">Login</button>

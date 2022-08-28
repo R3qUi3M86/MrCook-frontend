@@ -2,31 +2,35 @@ import { Fragment } from "react";
 import AddReview from "./AddReview";
 import CustomerReview from "./CustomerReview";
 
-const CustomerReviews = ({data, reloadCallback, userDetails}) => {
+const CustomerReviews = ({data, reloadCallback, userDetails, setUserDetails}) => {
+    function putUserCommentFirst() {
+        if (userDetails.id && userDetails.productComment){
+            for (let comment of data){
+                if (comment.userDTO.id === userDetails.id){
+                    data.sort(function(x,y){ return x === comment ? -1 : y === comment ? 1 : 0; });
+                    return;
+                }
+            }
+        }
+    }
+
+    putUserCommentFirst();
 
     return(
         <div className="container">
-            {(userDetails.banned) ? <Fragment/> : <AddReview data={userDetails} reloadCallback={reloadCallback}/>}
+            {(userDetails.banned) ? <Fragment/> : <AddReview data={userDetails} reloadCallback={reloadCallback} setUserDetails={setUserDetails} />}
 
-            {data.map((comment) => userDetails.username === comment.userDTO.username ? <CustomerReview key={comment.id}
+            {data.map((comment) => <CustomerReview key={comment.id}
             id={comment.id}
-            currentUser={userDetails.username}
+            userDetails={userDetails}
             author={comment.userDTO.username}
             title={comment.title} 
             body={comment.body}
             rating={comment.rating}
             created={comment.createDate}
             modified={comment.modifyDate}
-            reloadCallback={reloadCallback}/> : <Fragment key={comment.id}/>)}
-
-            {data.map((comment) => userDetails.username !== comment.userDTO.username ? <CustomerReview key={comment.id}
-            currentUser={userDetails.username}
-            author={comment.userDTO.username}
-            title={comment.title} 
-            body={comment.body}
-            rating={comment.rating}
-            created={comment.createDate}
-            modified={comment.modifyDate}/> : <Fragment key={comment.id}/>)}
+            setUserDetails={setUserDetails}
+            reloadCallback={reloadCallback}/>)}
         </div>
     )
 }

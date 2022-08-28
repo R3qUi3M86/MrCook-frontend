@@ -5,7 +5,7 @@ import LoginPage from './components/pages/LoginPage';
 import SignupPage from './components/pages/SignupPage';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import useLocalStorage from './utility/useLocalStorage';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import WithNavBar from './components/navbar/WithNavBar';
 import WithoutNavBar from './components/navbar/WithoutNavBar';
@@ -14,16 +14,14 @@ const getUserUrl = "http://localhost:5000/user/get_current";
 
 function App() {
   const [jwt, setJwt] = useLocalStorage("", "jwt");
-  const [userDetails, setUserDetails] = useState({
-    id: undefined,
-    username: undefined,
+  const [userDetails, setUserDetails] = useLocalStorage({
     member: false,
     banned: false,
     productComment: false
-  });
+  }, "userDetails");
 
   useEffect(() => {
-    if(jwt && !userDetails.id){
+    if(jwt){
       console.log("fetching user data...")
       axios
         .get(getUserUrl, {headers:{
@@ -37,13 +35,13 @@ function App() {
           setJwt("");
         });
     }
-  }, [jwt, setJwt, userDetails.id])
+  }, [jwt, setJwt, setUserDetails])
 
   return (
       <Router>
         <Routes>
           <Route element={<WithNavBar userDetails={userDetails} setJwt={setJwt} setUserDetails={setUserDetails}/>}>
-            <Route path="/" element={<ProductPage userDetails={userDetails}/>} />
+            <Route path="/" element={<ProductPage userDetails={userDetails} setUserDetails={setUserDetails}/>} />
             <Route path="/recipes" element={<RecipesPage />} />
           </Route>
           <Route element={<WithoutNavBar />}>

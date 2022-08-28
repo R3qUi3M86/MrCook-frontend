@@ -4,10 +4,12 @@ import { Fragment, useState } from 'react';
 import CurrentRating from './CurrentRating';
 import SetRating from './SetRating';
 import axios from 'axios';
+import useLocalStorage from '../../../../../utility/useLocalStorage';
 
 const CustomerReview = (props) => {
     const urlUpdate = "http://localhost:5000/product_comment/update";
-    const urlDelete = `http://localhost:5000/product_comment/delete/${props.id}`
+    const urlDelete = `http://localhost:5000/product_comment/delete/${props.id}`;
+    const [jwt] = useLocalStorage("", "jwt");
     const [edit, setEdit] = useState(false);
     const [saveDisabled, setSaveDisabled] = useState(false);
     const [commentData, setCommentData] = useState({
@@ -23,8 +25,9 @@ const CustomerReview = (props) => {
 
     function deleteReview(){
         axios
-            .delete(urlDelete)
-            .then(() => {
+            .delete(urlDelete, {headers:{'Authorization': `Bearer ${jwt}`}})
+            .then((response) => {
+                props.setUserDetails(response.data);
                 props.reloadCallback();
             })
             .catch((err) => {
@@ -34,7 +37,7 @@ const CustomerReview = (props) => {
 
     function updateReview(){
         axios
-            .put(urlUpdate, commentData)
+            .put(urlUpdate, commentData, {headers:{'Authorization': `Bearer ${jwt}`}})
             .then(() => {
                 props.reloadCallback();
             })
@@ -76,7 +79,12 @@ const CustomerReview = (props) => {
         <div className="py-4">
             <div className="d-flex justify-content-between">
                 <p className="product-review-author fw-bold my-0">{props.author} :</p>
-                {props.currentUser === props.author && !edit ? 
+                {props.userDetails.roles === "ADMIN" && props.userDetails.username !== props.author && !edit ?
+                <div>
+                    <BsTrashFill className="delete-review-btn mt-2 me-2" onClick={() => deleteReview()}/>
+                </div> :
+                <Fragment/>}
+                {props.userDetails.username === props.author && !edit ? 
                 <div>
                     <BsTrashFill className="delete-review-btn mt-2 me-2" onClick={() => deleteReview()}/>
                     <BsPencilSquare className="edit-review-btn mt-2" onClick={() => editReview()}/>
