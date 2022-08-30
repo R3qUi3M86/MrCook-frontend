@@ -15,6 +15,19 @@
   color: #ce7432 !important;
 }
 
+.primary-color {
+  color: #651d32
+}
+
+.orange {
+  color: #ce7432 !important;
+}
+
+hr.orange {
+  border-width: 0;
+  opacity: 1;
+}
+
 /* BOOTSTRAP OVERLOADS */
 /* btn primary */
 .btn-primary {

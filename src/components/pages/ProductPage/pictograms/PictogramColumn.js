@@ -7,7 +7,7 @@ const microwaveImg = path + '/images/microwave_light.png'
 const dishwasherImg = path + '/images/dishwasher_light.png'
 const platinumImg = path + '/images/plat_silicone_square.png'
 const antiSlipImg = path + '/images/antislip_light.png'
-const foodImg = path + '/images/food_safe.png'
+const foodImg = path + '/images/food_safe2.png'
 const temperatureImg = path + '/images/temp.png'
 
 const PictogramColumn = ({type}) => {
@@ -27,7 +27,6 @@ const PictogramColumn = ({type}) => {
                 <img src={antiSlipImg} className="img-fluid antislip" alt="Anti-slip pictogram"/>
                 <img src={foodImg} className="img-fluid food py-1" alt="Food Safe pictogram"/>
                 <img src={temperatureImg} className="img-fluid temperature" alt="Temperature range pictogram"/>
-
             </div>
         )
     }

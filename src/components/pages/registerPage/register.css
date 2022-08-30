@@ -1,0 +1,34 @@
+.bg-register {
+    /* The image used */
+    background-image: url("../../../../public/images/bm06.jpg");
+}
+
+.link-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgb(13, 110, 249);
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-color-checkbox:checked {
+    background-color: #651d32 !important;
+    color: #651d32 !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0rem !important;
+    border: 0px !important
+}
+
+.custom-color-checkbox {
+    border-color: #ce7432 !important;
+    box-shadow: 0 0 0 0rem !important;
+}
+
+.reg-success{
+    font-family: mainFont;
+    color: #ce7432;
+    font-size: 2.1rem;
+}

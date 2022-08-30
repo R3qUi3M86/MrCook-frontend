@@ -1,0 +1,53 @@
+body, html {
+    height: 100%;
+}
+
+#root{
+    height: 100%;
+}
+
+.bg {
+    /* Full height */
+    height: 100%;
+    /* background-color: #651d32; */
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-login {
+    /* The image used */
+    background-image: url("../../../../public/images/bm01.jpg");
+}
+
+.card-title{
+    font-family: mainFont;
+    color: #651d32;
+    font-size: 2rem;
+}
+
+.container {
+    height: 100%;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8)!important;
+}
+
+.disable-additional-alpha{
+    background-color: rgba(0,0,0,0) !important
+}
+
+.form-control:focus {
+    color: #495057 !important;
+    background-color: #fff !important;
+    border-color: #ce7432 !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0rem !important;
+}
+
+.input-group-text{
+    border: 0px !important; 
+}
