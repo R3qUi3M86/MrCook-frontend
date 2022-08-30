@@ -41,8 +41,8 @@ const NavigationBar = ({userDetails, setJwt, setUserDetails}) => {
                         <button className="btn btn-outline-primary fs-5">Login</button>
                     </Link>
                     
-                    <Link to="/signup" className='nav-link active px-1'>
-                        <button className="btn btn-secondary fs-5">Signup</button>
+                    <Link to="/register" className='nav-link active px-1'>
+                        <button className="btn btn-secondary fs-5">Register</button>
                     </Link>
                 </Fragment>) :
                 <button className="btn btn-outline-secondary fs-5" onClick={() => logout()}>Logout</button>

@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import WithNavBar from './components/navbar/WithNavBar';
 import WithoutNavBar from './components/navbar/WithoutNavBar';
+import ConditionalRoute from './utility/ConditionalRoute';
 
 const getUserUrl = "http://localhost:5000/user/get_current";
 
@@ -22,7 +23,6 @@ function App() {
 
   useEffect(() => {
     if(jwt){
-      console.log("fetching user data...")
       axios
         .get(getUserUrl, {headers:{
           'Authorization': `Bearer ${jwt}`
@@ -31,8 +31,9 @@ function App() {
             setUserDetails(response.data);
         })
         .catch((err) => {
-          console.log(err);
-          setJwt("");
+          if (err.request.status === 401){
+            setJwt("");
+          }
         });
     }
   }, [jwt, setJwt, setUserDetails])
@@ -45,9 +46,18 @@ function App() {
             <Route path="/recipes" element={<RecipesPage />} />
           </Route>
           <Route element={<WithoutNavBar />}>
-            <Route path="/login" element={<LoginPage setJwt={setJwt} setUserDetails={setUserDetails}/>} />
-            <Route path="/signup" element={<SignupPage />} />
-            <Route path="*" element="<h1>404 page not found</h1>" />
+            <Route path="/login" element={
+              <ConditionalRoute>
+                <LoginPage setJwt={setJwt} setUserDetails={setUserDetails}/>
+              </ConditionalRoute>} />  
+            <Route path="/signup" element={
+              <ConditionalRoute>
+                <SignupPage />
+              </ConditionalRoute>} />
+            <Route path="*" element={
+              <div className="d-flex flex-column justify-content-center" style={{height: "100%", backgroundColor: "#651d32"}}>
+                <h1 className='text-center text-light'>404 Page not found!</h1>
+              </div>} />
           </Route>
         </Routes>
       </Router>

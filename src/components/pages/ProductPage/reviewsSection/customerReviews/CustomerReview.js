@@ -92,13 +92,13 @@ const CustomerReview = (props) => {
                 <Fragment/>}
             </div>
             <div className="d-flex justify-content-between">
-                {edit ? <input className="form-control form-control-sm me-5" type="text" defaultValue={props.title} onChange={(e) => updateReviewTitle(e)} aria-label=".form-control-sm example"/> : <p className="fw-bold my-0">{props.title}</p>}
+                {edit ? <input className="form-control form-control-sm me-5" placeholder="Your review title..." type="text" defaultValue={props.title} onChange={(e) => updateReviewTitle(e)} aria-label=".form-control-sm example"/> : <p className="fw-bold my-0">{props.title}</p>}
                 <div className="d-flex pt-1">
                     {edit ? <SetRating rating={props.rating} callback={updateRating}/> : <CurrentRating rating={props.rating}/>}
                 </div>
             </div>
             <hr className="orange my-2"/>
-            {edit ? <textarea className="form-control form-control-sm" rows="3" defaultValue={props.body} onChange={(e) => updateReviewBody(e)}/> : <p className="quote-text">{props.body}</p>}
+            {edit ? <textarea className="form-control form-control-sm" rows="3" placeholder="Your review description..." defaultValue={props.body} onChange={(e) => updateReviewBody(e)}/> : <p className="quote-text">{props.body}</p>}
             <div className="d-flex justify-content-between">
                 <p className="small quote-text">Added: {createTime}</p>
                 {edit ? <button className="btn btn-outline-secondary mt-1 py-0" disabled={saveDisabled} onClick={() => updateReview()}>Save</button> : <Fragment/>}

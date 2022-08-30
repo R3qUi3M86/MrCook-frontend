@@ -70,7 +70,7 @@ const AddReview = ({data, reloadCallback, setUserDetails}) => {
                     <p className="product-review-author fw-bold my-0">{data.username} :</p>
                 </div>
                 <div className="d-flex justify-content-between">
-                    <input className="form-control form-control-sm me-5" type="text" placeholder="Your review title..." onChange={(e) => updateReviewTitle(e)} aria-label=".form-control-sm example"/>
+                    <input className="form-control form-control-sm me-5" type="text" placeholder="Your review title..." onChange={(e) => updateReviewTitle(e)}/>
                     <div className="d-flex pt-1">
                         <SetRating rating={commentData.rating} callback={updateRating}/>
                     </div>

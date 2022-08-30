@@ -1,5 +1,5 @@
 import useFetch from "../../../../utility/useFetch"
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { IconContext } from "react-icons";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 import CustomerReviews from "./customerReviews/CustomerReviews";
@@ -7,14 +7,6 @@ import DefaultSpinner from "../../../../utility/DefaultSpinner";
 
 const ReviewsSection = ({userDetails, setUserDetails}) => {
     const {data, status, loading, error, refetch} = useFetch("http://localhost:5000/product_comment/get_all");
-    const [seed, setSeed] = useState(1);
-
-    const reload = () => {
-        refetch();
-        let newSeed = Math.random();
-        while (seed === newSeed) newSeed = Math.random();
-        setSeed(newSeed);
-    }
 
     let rating = {
         avgRating: 5,
@@ -75,7 +67,7 @@ const ReviewsSection = ({userDetails, setUserDetails}) => {
                         <p className="quote-text">"Share your thoughts with us!"</p>
                     </div>
                 </div>
-                <CustomerReviews data={data} reloadCallback={reload} userDetails={userDetails} setUserDetails={setUserDetails}/>
+                <CustomerReviews data={data} reloadCallback={refetch} userDetails={userDetails} setUserDetails={setUserDetails}/>
             </section>
         )
     }
