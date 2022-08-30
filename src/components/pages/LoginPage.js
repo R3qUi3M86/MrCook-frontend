@@ -72,10 +72,10 @@ const LoginPage = ({setJwt, setUserDetails}) => {
                             </div>
                             <div className="card-footer border-0 disable-additional-alpha">
                                 <div className="d-flex justify-content-center quote-text">
-                                    Don't have an account?&nbsp;<a href="/signup">Sign Up</a>
+                                    Don't have an account?&nbsp;<a href="/register">Sign Up</a>
                                 </div>
                                 <div className="d-flex justify-content-center quote-text">
-                                    <a href="/signup">Forgot your password?</a>
+                                    <a href="/register">Forgot your password?</a>
                                 </div>
                             </div>
                         </div>

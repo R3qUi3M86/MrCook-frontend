@@ -50,7 +50,7 @@ function App() {
               <ConditionalRoute>
                 <LoginPage setJwt={setJwt} setUserDetails={setUserDetails}/>
               </ConditionalRoute>} />  
-            <Route path="/signup" element={
+            <Route path="/register" element={
               <ConditionalRoute>
                 <SignupPage />
               </ConditionalRoute>} />

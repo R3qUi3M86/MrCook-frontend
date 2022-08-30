@@ -43,7 +43,7 @@ body, html {
 .form-control:focus {
     color: #495057 !important;
     background-color: #fff !important;
-    border-color: #80bdff !important;
+    border-color: #ce7432 !important;
     outline: 0 !important;
     box-shadow: 0 0 0 0rem !important;
 }

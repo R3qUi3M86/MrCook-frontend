@@ -5,9 +5,6 @@ export class RegistrationForm {
         this.password = "";
         this.confirmPassword = "";
         this.termsAccepted = false;
-    }
-
-    validate(){
-
+        this.subscriber = false;
     }
 }
