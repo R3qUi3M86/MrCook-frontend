@@ -36,9 +36,7 @@ const ReviewsSection = ({userDetails, setUserDetails}) => {
     if (error) console.log(error);
 
     if (loading) {
-        return(
-            <DefaultSpinner/>
-        )
+        return <DefaultSpinner/>
     }
 
     if (status===200 && data) {

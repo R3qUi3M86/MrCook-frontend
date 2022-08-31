@@ -9,7 +9,13 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import WithNavBar from './components/navbar/WithNavBar';
 import WithoutNavBar from './components/navbar/WithoutNavBar';
-import ConditionalRoute from './utility/ConditionalRoute';
+import ConditionalRoute from './utility/routeAccess/ConditionalRoute';
+import MemberRoute from './utility/routeAccess/MemberRoute';
+import UserPanelPage from './components/pages/UserPanelPage';
+import CreatePage from './components/pages/CreatePage';
+import UserRoute from './utility/routeAccess/UserRoute';
+import AdminPanelPage from './components/pages/AdminPanelPage';
+import AdminRoute from './utility/routeAccess/AdminRoute';
 
 const getUserUrl = `${process.env.REACT_APP_BACKEND_URL}/user/get_current`;
 
@@ -44,6 +50,18 @@ function App() {
           <Route element={<WithNavBar userDetails={userDetails} setJwt={setJwt} setUserDetails={setUserDetails}/>}>
             <Route path="/" element={<ProductPage userDetails={userDetails} setUserDetails={setUserDetails}/>} />
             <Route path="/recipes" element={<RecipesPage />} />
+            <Route path="/create" element={
+              <MemberRoute>
+                <CreatePage/>
+              </MemberRoute>} />
+            <Route path="/user" element={
+              <UserRoute>
+                <UserPanelPage/>
+              </UserRoute>} />
+            <Route path="/admin" element={
+              <AdminRoute>
+                <AdminPanelPage/>
+              </AdminRoute>} />  
           </Route>
           <Route element={<WithoutNavBar />}>
             <Route path="/login" element={
