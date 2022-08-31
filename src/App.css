@@ -23,6 +23,10 @@
   color: #ce7432 !important;
 }
 
+.heart {
+  color:rgb(232, 71, 165)
+}
+
 hr.orange {
   border-width: 0;
   opacity: 1;

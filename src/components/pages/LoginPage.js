@@ -46,7 +46,7 @@ const LoginPage = ({setJwt, setUserDetails}) => {
             <div className="container">
 	            <div className="d-flex flex-column justify-content-center h-100">
                     <div className="d-flex justify-content-center">
-                        <div className="card d-flex flex-grow-1" style={{maxWidth: "25rem"}}>
+                        <div className="card form-card d-flex flex-grow-1" style={{maxWidth: "25rem"}}>
                             <div className="d-flex card-header border-0 justify-content-between disable-additional-alpha">
                                 <p className="card-title solid mb-0">Sign In</p>
                                 <img src={logoPath} className="img-fluid nav-logo" alt="MrCook Logo"/>

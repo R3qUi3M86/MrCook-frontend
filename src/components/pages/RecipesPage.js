@@ -24,7 +24,7 @@ const RecipesPage = () => {
     
     return (
         <div className="container">
-            <div className="d-flex flex-column h-100">
+            <div className="d-flex flex-column h-100 position-relative">
                 <div className="pt-5"/>
                 <SearchBar/>
                     {loading ? <DefaultSpinner/> : 

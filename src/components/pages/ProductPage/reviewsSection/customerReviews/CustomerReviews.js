@@ -6,7 +6,7 @@ const CustomerReviews = ({data, reloadCallback, userDetails, setUserDetails}) =>
     function putUserCommentFirst() {
         if (userDetails.id && userDetails.productComment){
             for (let comment of data){
-                if (comment.userDTO.id === userDetails.id){
+                if (comment.username === userDetails.username){
                     data.sort(function(x,y){ return x === comment ? -1 : y === comment ? 1 : 0; });
                     return;
                 }
@@ -23,7 +23,7 @@ const CustomerReviews = ({data, reloadCallback, userDetails, setUserDetails}) =>
             {data.map((comment) => <CustomerReview key={comment.id}
             id={comment.id}
             userDetails={userDetails}
-            author={comment.userDTO.username}
+            author={comment.username}
             title={comment.title} 
             body={comment.body}
             rating={comment.rating}
