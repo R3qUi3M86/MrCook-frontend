@@ -6,9 +6,12 @@ import SetRating from './SetRating';
 import axios from 'axios';
 import useLocalStorage from '../../../../../utility/useLocalStorage';
 
+const commentUpdateUrl = `${process.env.REACT_APP_BACKEND_URL}/product_comment/update`;
+const commentDeleteUrl = `${process.env.REACT_APP_BACKEND_URL}/product_comment/delete`;
+
 const CustomerReview = (props) => {
-    const urlUpdate = "http://localhost:5000/product_comment/update";
-    const urlDelete = `http://localhost:5000/product_comment/delete/${props.id}`;
+    const urlUpdate = commentUpdateUrl;
+    const urlDelete = `${commentDeleteUrl}/${props.id}`;
     const [jwt] = useLocalStorage("", "jwt");
     const [edit, setEdit] = useState(false);
     const [saveDisabled, setSaveDisabled] = useState(false);

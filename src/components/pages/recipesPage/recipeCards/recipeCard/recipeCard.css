@@ -1,0 +1,21 @@
+.recipe-card-title{
+    background-color: #651d32 !important;
+}
+
+.short-recipe-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 760px) {
+    .recipe-card-title{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .recipe-card-title{
+        font-size: 1.5rem;
+    }
+}

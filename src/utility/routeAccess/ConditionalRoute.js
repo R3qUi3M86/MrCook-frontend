@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom"
-import useLocalStorage from "./useLocalStorage"
+import useLocalStorage from "../useLocalStorage"
 
 const ConditionalRoute = ({children}) => {
     const [jwt]  = useLocalStorage("", "jwt")

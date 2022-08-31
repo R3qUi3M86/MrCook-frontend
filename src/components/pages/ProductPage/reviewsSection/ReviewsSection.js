@@ -5,8 +5,10 @@ import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 import CustomerReviews from "./customerReviews/CustomerReviews";
 import DefaultSpinner from "../../../../utility/DefaultSpinner";
 
+const getAllReviewsUrl = `${process.env.REACT_APP_BACKEND_URL}/product_comment/get_all`
+
 const ReviewsSection = ({userDetails, setUserDetails}) => {
-    const {data, status, loading, error, refetch} = useFetch("http://localhost:5000/product_comment/get_all");
+    const {data, status, loading, error, refetch} = useFetch(getAllReviewsUrl);
 
     let rating = {
         avgRating: 5,
@@ -34,9 +36,7 @@ const ReviewsSection = ({userDetails, setUserDetails}) => {
     if (error) console.log(error);
 
     if (loading) {
-        return(
-            <DefaultSpinner/>
-        )
+        return <DefaultSpinner/>
     }
 
     if (status===200 && data) {

@@ -5,9 +5,8 @@ import { FaKey } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import {useNavigate} from 'react-router-dom';
 
-const authUrl = "http://localhost:5000/login";
-const path = process.env.PUBLIC_URL;
-const logoPath = path + '/images/logo_new2_reduced_transparent.png'
+const authUrl = `${process.env.REACT_APP_BACKEND_URL}/user/login`;
+const logoPath = `${process.env.PUBLIC_URL}/images/logo_new2_reduced_transparent.png`;
 
 const LoginPage = ({setJwt, setUserDetails}) => {
     const [badCredentials, setBadCredentials] = useState(false);
@@ -47,7 +46,7 @@ const LoginPage = ({setJwt, setUserDetails}) => {
             <div className="container">
 	            <div className="d-flex flex-column justify-content-center h-100">
                     <div className="d-flex justify-content-center">
-                        <div className="card d-flex flex-grow-1" style={{maxWidth: "25rem"}}>
+                        <div className="card form-card d-flex flex-grow-1" style={{maxWidth: "25rem"}}>
                             <div className="d-flex card-header border-0 justify-content-between disable-additional-alpha">
                                 <p className="card-title solid mb-0">Sign In</p>
                                 <img src={logoPath} className="img-fluid nav-logo" alt="MrCook Logo"/>

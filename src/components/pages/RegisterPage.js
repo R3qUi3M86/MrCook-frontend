@@ -6,11 +6,10 @@ import { MdAlternateEmail } from "react-icons/md";
 import { RegistrationForm } from "./registerPage/regForm";
 import { RegistrationFormValidator } from "./registerPage/regFormValidator";
 
-const authUrl = "http://localhost:5000/register";
-const path = process.env.PUBLIC_URL;
-const logoPath = path + '/images/logo_new2_reduced_transparent.png'
+const registerUrl = `${process.env.REACT_APP_BACKEND_URL}/user/register`;
+const logoPath = `${process.env.PUBLIC_URL}/images/logo_new2_reduced_transparent.png`;
 
-const SignupPage = ({setJwt, setUserDetails}) => {
+const RegisterPage = () => {
     const [invalidForm, setInvalidForm] = useState(null);
     const [regForm, setRegForm] = useState(new RegistrationForm());
     const [successfulReg, setSuccessfulReg] = useState(false);
@@ -50,7 +49,7 @@ const SignupPage = ({setJwt, setUserDetails}) => {
         regFormValidator.validate();
         if (regFormValidator.formIsValid) { 
             axios
-                .post(authUrl, regForm)
+                .post(registerUrl, regForm)
                 .then((response) => {
                     if (response.data.success)
                         setSuccessfulReg(true)
@@ -75,7 +74,7 @@ const SignupPage = ({setJwt, setUserDetails}) => {
             <div className="container">
 	            <div className="d-flex flex-column justify-content-center h-100">
                     <div className="d-flex justify-content-center">
-                        <div className="card d-flex flex-grow-1" style={{maxWidth: "25rem"}}>
+                        <div className="card form-card d-flex flex-grow-1" style={{maxWidth: "25rem"}}>
                             <div className="d-flex card-header border-0 justify-content-between disable-additional-alpha">
                                 <p className="card-title mb-0">Sign Up</p>
                                 <img src={logoPath} className="img-fluid nav-logo" alt="MrCook Logo"/>
@@ -131,6 +130,9 @@ const SignupPage = ({setJwt, setUserDetails}) => {
                             <div className="card-body">
                                 <p className="reg-success text-center mb-3">Thank you for registering!</p>
                                 <p className="text-center my-4">You will shortly receive confirmation email describing next steps to finish the registration process. If the email doesn't come soon, please check your spam folder.</p>
+                                <div className="d-flex justify-content-center">
+                                    <a href="/">Back to main page</a>
+                                </div>
                             </div>}
                             
                             <div className="card-footer border-0 disable-additional-alpha">
@@ -147,4 +149,4 @@ const SignupPage = ({setJwt, setUserDetails}) => {
     );
 }
 
-export default SignupPage;
+export default RegisterPage;
