@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class RecipesPage extends Component {
+const getAllRecipesUrl = `${process.env.REACT_APP_BACKEND_URL}/register`;
 
-    render() {
-        return (
-            <div>recipes</div>
-        );
-    }
+const RecipesPage = () => {
+
+    return (
+        <div>recipes</div>
+    );
 }
 
 export default RecipesPage;

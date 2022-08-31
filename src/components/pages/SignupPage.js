@@ -6,7 +6,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { RegistrationForm } from "./signupPage/regForm";
 import { RegistrationFormValidator } from "./signupPage/regFormValidator";
 
-const registerUrl = `${process.env.REACT_APP_BACKEND_URL}/register`;
+const registerUrl = `${process.env.REACT_APP_BACKEND_URL}/user/register`;
 const path = process.env.PUBLIC_URL;
 const logoPath = path + '/images/logo_new2_reduced_transparent.png'
 
