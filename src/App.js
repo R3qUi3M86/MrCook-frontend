@@ -11,7 +11,7 @@ import WithNavBar from './components/navbar/WithNavBar';
 import WithoutNavBar from './components/navbar/WithoutNavBar';
 import ConditionalRoute from './utility/ConditionalRoute';
 
-const getUserUrl = "http://localhost:5000/user/get_current";
+const getUserUrl = `${process.env.REACT_APP_BACKEND_URL}/user/get_current`;
 
 function App() {
   const [jwt, setJwt] = useLocalStorage("", "jwt");

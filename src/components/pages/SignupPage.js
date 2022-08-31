@@ -1,12 +1,12 @@
-import "./registerPage/register.css"
+import "./signupPage/register.css"
 import axios from 'axios';
 import React, { useState } from 'react';
 import { FaKey, FaUser } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
-import { RegistrationForm } from "./registerPage/regForm";
-import { RegistrationFormValidator } from "./registerPage/regFormValidator";
+import { RegistrationForm } from "./signupPage/regForm";
+import { RegistrationFormValidator } from "./signupPage/regFormValidator";
 
-const authUrl = "http://localhost:5000/register";
+const registerUrl = `${process.env.REACT_APP_BACKEND_URL}/register`;
 const path = process.env.PUBLIC_URL;
 const logoPath = path + '/images/logo_new2_reduced_transparent.png'
 
@@ -50,7 +50,7 @@ const SignupPage = () => {
         regFormValidator.validate();
         if (regFormValidator.formIsValid) { 
             axios
-                .post(authUrl, regForm)
+                .post(registerUrl, regForm)
                 .then((response) => {
                     if (response.data.success)
                         setSuccessfulReg(true)

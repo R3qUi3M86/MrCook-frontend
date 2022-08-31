@@ -5,9 +5,8 @@ import { FaKey } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import {useNavigate} from 'react-router-dom';
 
-const authUrl = "http://localhost:5000/login";
-const path = process.env.PUBLIC_URL;
-const logoPath = path + '/images/logo_new2_reduced_transparent.png'
+const authUrl = `${process.env.REACT_APP_BACKEND_URL}/login`;
+const logoPath = `${process.env.PUBLIC_URL}/images/logo_new2_reduced_transparent.png`;
 
 const LoginPage = ({setJwt, setUserDetails}) => {
     const [badCredentials, setBadCredentials] = useState(false);
