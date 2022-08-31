@@ -1,16 +1,15 @@
-import "./signupPage/register.css"
+import "./registerPage/register.css"
 import axios from 'axios';
 import React, { useState } from 'react';
 import { FaKey, FaUser } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
-import { RegistrationForm } from "./signupPage/regForm";
-import { RegistrationFormValidator } from "./signupPage/regFormValidator";
+import { RegistrationForm } from "./registerPage/regForm";
+import { RegistrationFormValidator } from "./registerPage/regFormValidator";
 
 const registerUrl = `${process.env.REACT_APP_BACKEND_URL}/user/register`;
-const path = process.env.PUBLIC_URL;
-const logoPath = path + '/images/logo_new2_reduced_transparent.png'
+const logoPath = `${process.env.PUBLIC_URL}/images/logo_new2_reduced_transparent.png`;
 
-const SignupPage = () => {
+const RegisterPage = () => {
     const [invalidForm, setInvalidForm] = useState(null);
     const [regForm, setRegForm] = useState(new RegistrationForm());
     const [successfulReg, setSuccessfulReg] = useState(false);
@@ -131,6 +130,9 @@ const SignupPage = () => {
                             <div className="card-body">
                                 <p className="reg-success text-center mb-3">Thank you for registering!</p>
                                 <p className="text-center my-4">You will shortly receive confirmation email describing next steps to finish the registration process. If the email doesn't come soon, please check your spam folder.</p>
+                                <div className="d-flex justify-content-center">
+                                    <a href="/">Back to main page</a>
+                                </div>
                             </div>}
                             
                             <div className="card-footer border-0 disable-additional-alpha">
@@ -147,4 +149,4 @@ const SignupPage = () => {
     );
 }
 
-export default SignupPage;
+export default RegisterPage;

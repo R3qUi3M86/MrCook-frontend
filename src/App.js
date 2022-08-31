@@ -2,7 +2,7 @@ import './App.css';
 import RecipesPage from './components/pages/RecipesPage';
 import ProductPage from './components/pages/ProductPage';
 import LoginPage from './components/pages/LoginPage';
-import SignupPage from './components/pages/SignupPage';
+import RegisterPage from './components/pages/RegisterPage';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import useLocalStorage from './utility/useLocalStorage';
 import { useEffect } from 'react';
@@ -52,7 +52,7 @@ function App() {
               </ConditionalRoute>} />  
             <Route path="/register" element={
               <ConditionalRoute>
-                <SignupPage />
+                <RegisterPage />
               </ConditionalRoute>} />
             <Route path="*" element={
               <div className="d-flex flex-column justify-content-center" style={{height: "100%", backgroundColor: "#651d32"}}>
