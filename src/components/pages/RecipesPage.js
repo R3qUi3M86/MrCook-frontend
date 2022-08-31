@@ -23,11 +23,13 @@ const RecipesPage = () => {
     if (status===200 && data && !recipes) setRecipes(data);
     
     return (
-
-        <div className="pt-5">
-            <SearchBar/>
-            {loading ? <DefaultSpinner/> : 
-            recipes && recipes.length > 0 ? <RecipeCards recipes={recipes} userDetails={userDetails}/> : <NoRecipesFound/>}
+        <div className="container">
+            <div className="d-flex flex-column h-100">
+                <div className="pt-5"/>
+                <SearchBar/>
+                    {loading ? <DefaultSpinner/> : 
+                    recipes && recipes.length > 0 ? <RecipeCards recipes={recipes} userDetails={userDetails}/> : <NoRecipesFound/>}
+            </div>
         </div>
     );
 }
