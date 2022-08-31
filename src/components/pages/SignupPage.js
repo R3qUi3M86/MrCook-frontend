@@ -10,7 +10,7 @@ const authUrl = "http://localhost:5000/register";
 const path = process.env.PUBLIC_URL;
 const logoPath = path + '/images/logo_new2_reduced_transparent.png'
 
-const SignupPage = ({setJwt, setUserDetails}) => {
+const SignupPage = () => {
     const [invalidForm, setInvalidForm] = useState(null);
     const [regForm, setRegForm] = useState(new RegistrationForm());
     const [successfulReg, setSuccessfulReg] = useState(false);
