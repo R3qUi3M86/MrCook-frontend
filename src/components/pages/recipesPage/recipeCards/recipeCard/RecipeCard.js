@@ -1,17 +1,13 @@
 import './recipeCard.css';
-import {BsHeart, BsHeartFill} from "react-icons/bs";
+import FavouriteButton from './buttons/FavouriteButton';
 
 const RecipeCard = ({recipe, userDetails}) => {
-    function addToFavourites(){
-        //need to implement
-    }
-
     return(
         <div>
             <div className="card d-flex flex-grow-1 mb-2 justify-content-center">
                 <div className="d-flex card-header border-0 justify-content-between recipe-card-title">
                     <p className="text-light short-recipe-title mb-0 pe-3">{recipe.title}</p>
-                    {userDetails.id ? <div onClick={()=>addToFavourites()}><BsHeart className="heart mb-1"/></div> : <></>/*Check if in favourites*/} 
+                    <FavouriteButton uid={userDetails.id} favList={recipe.recipeFavourites} rid={recipe.id}/>
                 </div>
                 <div className="card-body">
                     {/* <div className="input-group mb-3">
