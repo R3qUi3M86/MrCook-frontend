@@ -16,14 +16,95 @@
     text-overflow: ellipsis;
 }
 
-@media screen and (max-width: 760px) {
+.adaptive-recipes-bg {
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.board-bg {
+    /* The image used */
+    background-image: url("../../../../../../public/images/board.jpg");
+}
+
+@media screen and (max-width: 400px){
     .recipe-card-title{
         font-size: 1rem;
     }
+
+    .adaptive-recipes-bg{
+        height: 100vw;
+    }
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 400px) and (orientation: portrait){
+    .recipe-card-title{
+        font-size: 1rem;
+    }
+
+    .adaptive-recipes-bg{
+        height: 70vh;
+    }
+}
+
+@media screen and (min-width: 400px) and (orientation: landscape){
+    .recipe-card-title{
+        font-size: 1rem;
+    }
+
+    .adaptive-recipes-bg{
+        height: 50vw;
+    }
+}
+
+
+@media screen and (min-width: 760px) and (orientation: portrait){
     .recipe-card-title{
         font-size: 1.5rem;
+    }
+
+    .adaptive-recipes-bg{
+        height: 75vw;
+    }
+}
+
+@media screen and (min-width: 760px) and (orientation: landscape){
+    .recipe-card-title{
+        font-size: 1.5rem;
+    }
+
+    .adaptive-recipes-bg{
+        height: 70vw;
+    }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape){
+    .recipe-card-title{
+        font-size: 1rem;
+    }
+
+    .adaptive-recipes-bg{
+        height: 45vw;
+    }
+}
+
+@media screen and (min-width: 1200px) and (orientation: landscape){
+    .recipe-card-title{
+        font-size: 1.25rem;
+    }
+
+    .adaptive-recipes-bg{
+        height: 40vw;
+    }
+}
+
+@media screen and (min-width: 1400px) and (orientation: landscape){
+    .recipe-card-title{
+        font-size: 1.25rem;
+    }
+
+    .adaptive-recipes-bg{
+        height: 35vw;
     }
 }

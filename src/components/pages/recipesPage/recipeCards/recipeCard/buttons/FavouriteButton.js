@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import {BsHeart, BsHeartFill} from "react-icons/bs";
 import useLocalStorage from '../../../../../../utility/useLocalStorage';
 
-
-
 const FavouriteButton = ({uid, favList, rid}) => {
     const [jwt] = useLocalStorage("", "jwt")
     const [favourite, setFavourite] = useState(false);
