@@ -1,0 +1,12 @@
+.selected-filter-bg{
+    background-color: #f2c19e !important;
+}
+
+.selected-filter-bg:hover{
+    background-color: #ce7432 !important;
+    transition: color 0.5s !important;
+}
+
+.fixed-height{
+    height: 2rem;
+}

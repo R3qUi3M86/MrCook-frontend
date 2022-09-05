@@ -13,21 +13,41 @@ export class SearchCriteron {
 
     toggleVegan(setSearch){
         this.vegan = !this.vegan;
+        if (this.vegan){
+            this.vegetarian = (this.vegetarian ? false : this.vegetarian);
+            this.meat = (this.meat ? false : this.meat);
+            this.seafood = (this.seafood ? false : this.seafood);
+        }
         setSearch(this);
     }
 
     toggleVegetarian(setSearch){
         this.vegetarian = !this.vegetarian;
+        if (this.vegetarian){
+            this.vegan = (this.vegan ? false : this.vegan);
+            this.meat = (this.meat ? false : this.meat);
+            this.seafood = (this.seafood ? false : this.seafood);
+        }
         setSearch(this);
     };
 
     toggleCarnivore(setSearch){
         this.meat = !this.meat;
+        if (this.meat){
+            this.vegan = (this.vegan ? false : this.vegan);
+            this.vegetarian = (this.vegetarian ? false : this.vegetarian);
+            this.seafood = (this.seafood ? false : this.seafood);
+        }
         setSearch(this);
     }
 
     toggleSeafood(setSearch){
         this.seafood = !this.seafood;
+        if (this.seafood){
+            this.vegan = (this.vegan ? false : this.vegan);
+            this.vegetarian = (this.vegetarian ? false : this.vegetarian);
+            this.meat = (this.meat ? false : this.meat);
+        }
         setSearch(this);
     }
 

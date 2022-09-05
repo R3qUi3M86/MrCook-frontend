@@ -1,16 +1,94 @@
+import { useState } from "react";
+import "./searchFilter.css";
+
+const iconsPath = process.env.PUBLIC_URL + '/images/filter_icons/';
+const veganIcon = iconsPath + 'vegan.png';
+const vegetarianIcon = iconsPath + 'vegetarian.png';
+const meatIcon = iconsPath + 'meat.png';
+const fishIcon = iconsPath + 'fish.png';
+const glutenIcon = iconsPath + 'gluten.png';
+const lowFatIcon = iconsPath + 'low_fat.png';
+const lowCarbIcon = iconsPath + 'low_carb.png';
+const hiProteinIcon = iconsPath + 'hi_protein.png';
+
 const SearchFilter = ({search, setSearch}) => {
+    const [seed, setSeed] = useState(Math.random())
+
+    function reload(){
+        let newSeed = seed;
+        while (newSeed === seed){
+            newSeed = Math.random();
+        }
+        console.log("new seed")
+        setSeed(newSeed);
+    }
+
     return(
         <>
             <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Tags</button>
-            <ul className="dropdown-menu">
-                <li><button className="dropdown-item" type="button" onClick={()=>search.toggleVegan(setSearch)}>Vegan</button></li>
-                <li><button className="dropdown-item" type="button" onClick={()=>search.toggleVegetarian(setSearch)}>Vegetarian</button></li>
-                <li><button className="dropdown-item" type="button" onClick={()=>search.toggleCarnivore(setSearch)}>Carnivore</button></li>
-                <li><button className="dropdown-item" type="button" onClick={()=>search.toggleSeafood(setSearch)}>Fish/Seafood</button></li>
-                <li><button className="dropdown-item" type="button" onClick={()=>search.toggleGlutenFree(setSearch)}>No gluten</button></li>
-                <li><button className="dropdown-item" type="button" onClick={()=>search.toggleLowFat(setSearch)}>Low fat</button></li>
-                <li><button className="dropdown-item" type="button" onClick={()=>search.toggleLowCarbs(setSearch)}>Low carbs</button></li>
-                <li><button className="dropdown-item" type="button" onClick={()=>search.toggleHighProtein(setSearch)}>High protein</button></li>
+            <ul className="dropdown-menu py-0">
+                <li>
+                    <button className={search.vegan ? "dropdown-item fixed-height d-flex justify-content-between selected-filter-bg" :
+                        "dropdown-item fixed-height d-flex justify-content-between"}
+                        type="button" onClick={()=>{search.toggleVegan(setSearch); reload()}}>
+                        <p className="mb-0">Vegan</p>
+                        <img src={veganIcon} className="img-fluid" alt="Vegan icon"/>
+                    </button>
+                </li>
+                <li>
+                    <button className={search.vegetarian ? "dropdown-item fixed-height d-flex justify-content-between selected-filter-bg" :
+                        "dropdown-item fixed-height d-flex justify-content-between"} 
+                        type="button" onClick={()=>{search.toggleVegetarian(setSearch); reload()}}>
+                        <p className="mb-0">Vegetarian</p>
+                        <img src={vegetarianIcon} className="img-fluid" alt="Vegetarian icon"/>
+                    </button>
+                </li>
+                <li>
+                    <button className={search.meat ? "dropdown-item fixed-height d-flex justify-content-between selected-filter-bg" :
+                        "dropdown-item fixed-height d-flex justify-content-between"} 
+                        type="button" onClick={()=>{search.toggleCarnivore(setSearch); reload()}}>
+                        <p className="mb-0">Carnivore</p>
+                        <img src={meatIcon} className="img-fluid" alt="Meat icon"/>
+                    </button>
+                </li>
+                <li>
+                    <button className={search.seafood ? "dropdown-item fixed-height d-flex justify-content-between selected-filter-bg" :
+                        "dropdown-item fixed-height d-flex justify-content-between"} 
+                        type="button" onClick={()=>{search.toggleSeafood(setSearch); reload()}}>
+                        <p className="mb-0">Fish/Seafood</p>
+                        <img src={fishIcon} className="img-fluid" alt="Fish icon"/>
+                    </button>
+                </li>
+                <li><button className={search.glutenFree ? "dropdown-item fixed-height d-flex justify-content-between selected-filter-bg" :
+                        "dropdown-item fixed-height d-flex justify-content-between"}
+                         type="button" onClick={()=>{search.toggleGlutenFree(setSearch); reload()}}>
+                        <p className="mb-0">Gluten-free</p>
+                        <img src={glutenIcon} className="img-fluid" alt="Gluten icon"/>
+                    </button>
+                </li>
+                <li><button className={search.lowFat ? "dropdown-item fixed-height d-flex justify-content-between selected-filter-bg" :
+                        "dropdown-item fixed-height d-flex justify-content-between"} 
+                        type="button" onClick={()=>{search.toggleLowFat(setSearch); reload()}}>
+                        <p className="mb-0">Low fat</p>
+                        <img src={lowFatIcon} className="img-fluid" alt="Fat icon"/>
+                    </button>
+                </li>
+                <li>
+                    <button className={search.lowCarbs ? "dropdown-item fixed-height d-flex justify-content-between selected-filter-bg" :
+                        "dropdown-item fixed-height d-flex justify-content-between"} 
+                        type="button" onClick={()=>{search.toggleLowCarbs(setSearch); reload()}}>
+                        <p className="mb-0">Low carbs</p>
+                        <img src={lowCarbIcon} className="img-fluid" alt="Carbs icon"/>
+                        </button>
+                    </li>
+                <li>
+                    <button className={search.highProtein ? "dropdown-item fixed-height d-flex justify-content-between selected-filter-bg" :
+                        "dropdown-item fixed-height d-flex justify-content-between"} 
+                        type="button" onClick={()=>{search.toggleHighProtein(setSearch); reload()}}>
+                        <p className="mb-0">High protein</p>
+                        <img src={hiProteinIcon} className="img-fluid" alt="Protein icon"/>
+                    </button>
+                </li>
             </ul>
         </>
     )
