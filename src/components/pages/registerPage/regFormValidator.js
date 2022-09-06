@@ -23,8 +23,8 @@ export class RegistrationFormValidator {
             return;
         }
 
-        if (username.length > 30){
-            this.usernameValidationResult = "Must be maximum 30 characters!"
+        if (username.length > 16){
+            this.usernameValidationResult = "Must be maximum 16 characters!"
             return;
         }
 

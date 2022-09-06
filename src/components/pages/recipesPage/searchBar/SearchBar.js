@@ -15,6 +15,11 @@ const SearchBar = () => {
         console.log(search);
     }
 
+    // function updateSearchFilter(search){
+    //     setSearch(search);
+    //     console.log(search)
+    // }
+
     return(
         <div className="d-flex justify-content-center pt-4">
             <div className="input-group my-2">
