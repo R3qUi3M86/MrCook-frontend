@@ -10,3 +10,8 @@
 .fixed-height{
     height: 2rem;
 }
+
+.icon-small-search{
+    height: 1.5rem;
+    width:  1.5rem;
+}

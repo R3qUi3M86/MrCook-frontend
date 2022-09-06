@@ -19,7 +19,6 @@ const SearchFilter = ({search, setSearch}) => {
         while (newSeed === seed){
             newSeed = Math.random();
         }
-        console.log("new seed")
         setSeed(newSeed);
     }
 
@@ -32,7 +31,7 @@ const SearchFilter = ({search, setSearch}) => {
                         "dropdown-item fixed-height d-flex justify-content-between"}
                         type="button" onClick={()=>{search.toggleVegan(setSearch); reload()}}>
                         <p className="mb-0">Vegan</p>
-                        <img src={veganIcon} className="img-fluid" alt="Vegan icon"/>
+                        <img src={veganIcon} className="icon-small-search" alt="Vegan icon"/>
                     </button>
                 </li>
                 <li>
@@ -40,7 +39,7 @@ const SearchFilter = ({search, setSearch}) => {
                         "dropdown-item fixed-height d-flex justify-content-between"} 
                         type="button" onClick={()=>{search.toggleVegetarian(setSearch); reload()}}>
                         <p className="mb-0">Vegetarian</p>
-                        <img src={vegetarianIcon} className="img-fluid" alt="Vegetarian icon"/>
+                        <img src={vegetarianIcon} className="icon-small-search" alt="Vegetarian icon"/>
                     </button>
                 </li>
                 <li>
@@ -48,7 +47,7 @@ const SearchFilter = ({search, setSearch}) => {
                         "dropdown-item fixed-height d-flex justify-content-between"} 
                         type="button" onClick={()=>{search.toggleCarnivore(setSearch); reload()}}>
                         <p className="mb-0">Carnivore</p>
-                        <img src={meatIcon} className="img-fluid" alt="Meat icon"/>
+                        <img src={meatIcon} className="icon-small-search" alt="Meat icon"/>
                     </button>
                 </li>
                 <li>
@@ -56,21 +55,21 @@ const SearchFilter = ({search, setSearch}) => {
                         "dropdown-item fixed-height d-flex justify-content-between"} 
                         type="button" onClick={()=>{search.toggleSeafood(setSearch); reload()}}>
                         <p className="mb-0">Fish/Seafood</p>
-                        <img src={fishIcon} className="img-fluid" alt="Fish icon"/>
+                        <img src={fishIcon} className="icon-small-search" alt="Fish icon"/>
                     </button>
                 </li>
                 <li><button className={search.glutenFree ? "dropdown-item fixed-height d-flex justify-content-between selected-filter-bg" :
                         "dropdown-item fixed-height d-flex justify-content-between"}
                          type="button" onClick={()=>{search.toggleGlutenFree(setSearch); reload()}}>
                         <p className="mb-0">Gluten-free</p>
-                        <img src={glutenIcon} className="img-fluid" alt="Gluten icon"/>
+                        <img src={glutenIcon} className="icon-small-search" alt="Gluten icon"/>
                     </button>
                 </li>
                 <li><button className={search.lowFat ? "dropdown-item fixed-height d-flex justify-content-between selected-filter-bg" :
                         "dropdown-item fixed-height d-flex justify-content-between"} 
                         type="button" onClick={()=>{search.toggleLowFat(setSearch); reload()}}>
                         <p className="mb-0">Low fat</p>
-                        <img src={lowFatIcon} className="img-fluid" alt="Fat icon"/>
+                        <img src={lowFatIcon} className="icon-small-search" alt="Fat icon"/>
                     </button>
                 </li>
                 <li>
@@ -78,7 +77,7 @@ const SearchFilter = ({search, setSearch}) => {
                         "dropdown-item fixed-height d-flex justify-content-between"} 
                         type="button" onClick={()=>{search.toggleLowCarbs(setSearch); reload()}}>
                         <p className="mb-0">Low carbs</p>
-                        <img src={lowCarbIcon} className="img-fluid" alt="Carbs icon"/>
+                        <img src={lowCarbIcon} className="icon-small-search" alt="Carbs icon"/>
                         </button>
                     </li>
                 <li>
@@ -86,7 +85,7 @@ const SearchFilter = ({search, setSearch}) => {
                         "dropdown-item fixed-height d-flex justify-content-between"} 
                         type="button" onClick={()=>{search.toggleHighProtein(setSearch); reload()}}>
                         <p className="mb-0">High protein</p>
-                        <img src={hiProteinIcon} className="img-fluid" alt="Protein icon"/>
+                        <img src={hiProteinIcon} className="icon-small-search" alt="Protein icon"/>
                     </button>
                 </li>
             </ul>

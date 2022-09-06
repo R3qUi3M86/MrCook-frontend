@@ -19,7 +19,7 @@ const SearchBar = () => {
     //     setSearch(search);
     //     console.log(search)
     // }
-    console.log("rerender")
+
     return(
         <div className="d-flex justify-content-center pt-4">
             <div className="input-group my-2">

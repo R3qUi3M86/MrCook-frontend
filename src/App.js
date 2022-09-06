@@ -51,7 +51,7 @@ function App() {
       <Routes>
         <Route element={<WithNavBar userDetails={userDetails} setJwt={setJwt} setUserDetails={setUserDetails}/>}>
           <Route path="/" element={<ProductPage userDetails={userDetails} setUserDetails={setUserDetails}/>} />
-          <Route path="/recipes" element={<RecipesPage />} />
+          <Route path="/recipes" element={<RecipesPage userDetails={userDetails} jwt={jwt} setJwt={setJwt}/>} />
           <Route path="/create" element={<MemberRoute><CreatePage/></MemberRoute>} />
           <Route path="/user" element={<UserRoute><UserPanelPage/></UserRoute>} />
           <Route path="/admin" element={<AdminRoute><AdminPanelPage/></AdminRoute>} />  

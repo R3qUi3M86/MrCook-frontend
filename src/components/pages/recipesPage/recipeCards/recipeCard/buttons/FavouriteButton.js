@@ -42,10 +42,10 @@ const FavouriteButton = ({uid, favList, rid}) => {
         <>
             {uid ?
                 favourite ?
-                    <div className="heart-btn" onClick={()=>removeFromFavourites()}>
+                    <div className="clickable" onClick={()=>removeFromFavourites()}>
                         <BsHeartFill className="heart mb-1"/>
                     </div> : 
-                <div className="heart-btn" onClick={()=>addToFavourites()}>
+                <div className="clickable" onClick={()=>addToFavourites()}>
                     <BsHeart className="heart mb-1"/>
                 </div> : 
             <></>}
